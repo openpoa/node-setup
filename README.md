@@ -83,6 +83,15 @@ Start
 docker-compose -f docker-compose.poacore-validator up -d
 ```
 
+Follow along with logs and when the node is fully caught up, edit the docker compose file to turn mining on
+```
+# Edit docker-compose.poacore-validator.yml
+# Set NETHERMIND_INITCONFIG_ISMINING: "true"
+
+# Restart node
+docker-compose -f docker-compose.poacore-validator up -d
+```
+
 ## POA Core Archive node
 
 ### Requirements
