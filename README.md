@@ -2,7 +2,9 @@
 
 The following instructions are for docker-based Nethermind nodes.
 
-## Installing docker & docker compose
+<details>
+  <summary>Install docker & docker compose</summary>
+## Install docker & docker compose
 
 ```
 sudo apt-get update && sudo apt-get dist-upgrade
@@ -38,6 +40,12 @@ sudo chmod +x /usr/local/bin/docker-compose
 docker-compose --version
 ```
 
+</details>
+
+
+<details>
+  <summary>POA Core RPC node</summary>
+  
 ## POA Core RPC node
 
 ### Requirements
@@ -50,6 +58,12 @@ git clone https://github.com/openpoa/node-setup.git
 
 docker-compose -f docker-compose.poacore-rpc.yml up -d
 ```
+
+</details>
+
+
+<details>
+  <summary>POA Core Validator node</summary>
 
 ## POA Core Validator node
 
@@ -92,6 +106,12 @@ Follow along with logs and when the node is fully caught up, edit the docker com
 docker-compose -f docker-compose.poacore-validator up -d
 ```
 
+</details>
+
+
+<details>
+  <summary>POA Core Archive node</summary>
+
 ## POA Core Archive node
 
 ### Requirements
@@ -104,3 +124,5 @@ git clone https://github.com/openpoa/node-setup.git
 
 docker-compose -f docker-compose.poacore-archive.yml up -d
 ```
+
+</details>
