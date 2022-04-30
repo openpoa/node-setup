@@ -4,6 +4,7 @@ The following instructions are for docker-based Nethermind nodes.
 
 <details>
   <summary>Install docker & docker compose</summary>
+
 ## Install docker & docker compose
 
 ```
