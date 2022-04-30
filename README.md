@@ -28,6 +28,8 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io
 
 sudo groupadd docker
 sudo usermod -aG docker $(whoami)
+# Refresh group
+sudo su - $(whoami)
 
 # Verify installation
 docker run hello-world
