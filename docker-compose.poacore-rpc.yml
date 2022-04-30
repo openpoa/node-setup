@@ -2,7 +2,7 @@ version: '3.7'
 services:
   nethermind:
     init: true
-    container_name: poa-core-archive
+    container_name: poa-core-rpc
     image: nethermind/nethermind:latest
     environment:
       NETHERMIND_CONFIG: poacore
