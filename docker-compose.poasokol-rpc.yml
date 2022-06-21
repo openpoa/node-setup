@@ -1,0 +1,32 @@
+version: '3.7'
+services:
+  nethermind:
+    init: true
+    container_name: poa-sokol-rpc
+    image: nethermind/nethermind:latest
+    environment:
+      NETHERMIND_CONFIG: sokol
+      NETHERMIND_SYNCCONFIG_FASTSYNC: "true"
+      NETHERMIND_SYNCCONFIG_FASTBLOCKS: "true"
+      NETHERMIND_JSONRPCCONFIG_ENABLED: "true"
+      NETHERMIND_JSONRPCCONFIG_HOST: 0.0.0.0
+      NETHERMIND_SYNCCONFIG_DOWNLOADBODIESINFASTSYNC: "true"
+      NETHERMIND_SYNCCONFIG_DOWNLOADRECEIPTSINFASTSYNC: "true"
+      NETHERMIND_PRUNINGCONFIG_MODE: "None"
+      NETHERMIND_NETWORKCONFIG_BOOTNODES: "enode://10eb38a1b0384d478c98b763b5d608b79bdb1e9777391cb7fcec2d1c68f80ce2c958589e958d1d9319fd8a7713c3480444cab109091ad5cae273798dd50f9728@104.248.49.16:30303"
+    volumes:
+      - ./data/logs:/nethermind/logs
+      - ./data/keystore:/nethermind/keystore
+      - ./data/nethermind_db:/nethermind/nethermind_db
+    ports:
+      - "30303:30303"
+      - "30303:30303/udp"
+      - "30313:30313"
+      - "30313:30313/udp"
+      - "8545:8545"
+    restart: unless-stopped
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "10"
