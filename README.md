@@ -147,3 +147,22 @@ docker-compose -f docker-compose.poasokol-rpc.yml up -d
 ```
 
 </details>
+
+
+<details>
+  <summary>POA Sokol Archive node</summary>
+
+## POA Sokol Archive node
+
+### Requirements
+* CPU: 2
+* Memory: 8
+* Disk: 600G
+
+```
+git clone https://github.com/openpoa/node-setup.git
+
+docker-compose -f docker-compose.poasokol-archive up -d
+```
+
+</details>
